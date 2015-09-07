@@ -1,1 +1,2 @@
 c:\users\jefferson\documents\visual studio 2015\Projects\VaiFundos\VaiFundos\bin\Debug\VaiFundos.exe.config
+C:\Users\Jefferson\Documents\VaiFundos\VaiFundos\VaiFundos\bin\Debug\VaiFundos.exe.config

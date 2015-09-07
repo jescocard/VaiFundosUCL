@@ -8,6 +8,10 @@ namespace VaiFundos
 {
     class FundosEmDolar : FundoDeInvestimento
     {
-
+        public FundosEmDolar(string nome, string sigla) : base(nome, sigla)
+        {
+            this.nome = nome;
+            this.sigla = sigla;
+        }
     }
 }

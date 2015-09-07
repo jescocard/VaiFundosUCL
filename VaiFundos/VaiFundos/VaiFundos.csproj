@@ -48,6 +48,7 @@
     <Compile Include="FundoDeInvestimento.cs" />
     <Compile Include="FundosEmDolar.cs" />
     <Compile Include="FundosEmReal.cs" />
+    <Compile Include="GerenciadorDeFundos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

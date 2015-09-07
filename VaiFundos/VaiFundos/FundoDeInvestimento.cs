@@ -9,8 +9,14 @@ namespace VaiFundos
     class FundoDeInvestimento
     {
         protected string nome;
-        protected string cod;
+        protected string sigla;
         protected List<Aplicacao> aplicacoes;
+
+        public FundoDeInvestimento(string nome,string sigla)
+        {
+            this.nome = nome;
+            this.sigla = sigla;
+        }
         
 
         public void resgate()

@@ -8,5 +8,10 @@ namespace VaiFundos
 {
     class FundosEmReal : FundoDeInvestimento
     {
+        public FundosEmReal (string nome, string sigla) : base(nome, sigla)
+        {
+            this.nome = nome;
+            this.sigla = sigla;
+        }
     }
 }

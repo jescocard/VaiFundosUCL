@@ -8,6 +8,7 @@ namespace VaiFundos
 {
     class Cliente
     {
-        private string nome
+        private string nome;
+
     }
 }

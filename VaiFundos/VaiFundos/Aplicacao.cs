@@ -8,11 +8,12 @@ namespace VaiFundos
 {
     class Aplicacao
     {
-        public float valorAplicacao;
+        public double valorAplicacao;
         private DateTime dataAplicacao;
         private Cliente cliente;
+        protected double rendimento;
 
-        public Aplicacao(float valor, Cliente clt)
+        public Aplicacao(double valor, Cliente clt)
         {
             this.valorAplicacao = valor;
             this.cliente = clt;
