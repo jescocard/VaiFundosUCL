@@ -9,16 +9,10 @@ namespace VaiFundos
     class Aplicacao
     {
         public double valorAplicacao;
-        private DateTime dataAplicacao;
-        private Cliente cliente;
-        protected double rendimento;
+        public DateTime dataAplicacao;
+        public Cliente cliente;
+        public double rendimento  =0;
 
-        public Aplicacao(double valor, Cliente clt)
-        {
-            this.valorAplicacao = valor;
-            this.cliente = clt;
-            this.dataAplicacao = DateTime.Now;
-        }
         
     }
    
