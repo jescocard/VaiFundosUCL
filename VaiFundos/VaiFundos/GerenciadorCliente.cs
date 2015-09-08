@@ -9,6 +9,17 @@ namespace VaiFundos
     class GerenciadorCliente : Cliente
     {
         protected List<Cliente> Clientes = new List<Cliente>();
+        private List<Aplicacao> todasAplicacoes = new List<Aplicacao>();
+
+        public List<Aplicacao> getTodasAplicacoes()
+        {
+            return this.todasAplicacoes;
+        }
+        public void setTodasAplicacoes(Aplicacao a)
+        {
+            this.todasAplicacoes.Add(a);
+        }
+
         public void cadastrarCliente(string n)
         {
             Cliente novo = new Cliente();
@@ -36,6 +47,22 @@ namespace VaiFundos
                
             }
             return null;
+
+        }
+        public void relatorioCliente(int codigo)
+        {
+
+            Aplicacao aux;
+            foreach (Aplicacao item in this.todasAplicacoes)
+            {
+
+                aux = new Aplicacao();
+                aux = item;
+                if (aux.getCliente().getCod().Equals(codigo))
+                {
+                    Console.WriteLine("O Cliente: {0} , possui o seguinte investimento R$: {1} na data: {2}", aux.getCliente().getnome(), aux.getValorAplicacao(), aux.getDataAplicacao());
+                }
+            }
 
         }
 

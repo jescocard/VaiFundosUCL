@@ -23,7 +23,7 @@ namespace VaiFundos
             fundo_dolar1.Aplicar(201.3, 2);
             fundo_dolar1.Aplicar(201.0, 2);
 
-            fundo_dolar1.relatorioCliente(2);
+            gerenciador.relatorioCliente(2);
             
 
             
