@@ -33,6 +33,14 @@ namespace VaiFundos
             nova.rendimento = 0;
             this.aplicacoes.Add(nova);
         }
+        public void relatorioCliente(int codigo)
+        {
+            foreach (Aplicacao item in aplicacoes)
+            {
+                if(item.cliente.getCod() == codigo) { 
+}
+            }
+        }
     }
     
 
