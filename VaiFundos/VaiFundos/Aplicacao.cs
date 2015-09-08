@@ -8,10 +8,10 @@ namespace VaiFundos
 {
     class Aplicacao
     {
-        public double valorAplicacao;
+        public double valorAplicacao = 0;
         public DateTime dataAplicacao;
         public Cliente cliente;
-        public double rendimento  =0;
+        public double rendimento  = 0;
 
         
     }

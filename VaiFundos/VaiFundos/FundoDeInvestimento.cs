@@ -10,7 +10,7 @@ namespace VaiFundos
     {
         protected string nome;
         protected string sigla;
-        protected List<Aplicacao> aplicacoes;
+        public List<Aplicacao> aplicacoes = new List<Aplicacao>();
 
         public FundoDeInvestimento(string nome,string sigla)
         {
@@ -24,8 +24,13 @@ namespace VaiFundos
 
 
         }
-        public void Aplicar(Aplicacao nova,int cod)
+        public void Aplicar(double valor,Cliente c)
         {
+            Aplicacao nova = new Aplicacao();
+            nova.cliente = c;
+            nova.valorAplicacao = valor;
+            nova.dataAplicacao = DateTime.Now;
+            nova.rendimento = 0;
             this.aplicacoes.Add(nova);
         }
     }

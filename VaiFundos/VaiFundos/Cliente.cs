@@ -9,19 +9,20 @@ namespace VaiFundos
     class Cliente
     {
         private string nome;
-        private int cod = 10;
+        private int cod;
       
         
 
-        public Cliente(string n)
+        public Cliente()
         {
-            this.nome = n;
+            nome = null;
             
         }
         public string getnome() { return this.nome; }
         public void setNome(string n) { this.nome = n; }
         public int getCod() { return this.cod; }
+        public void setCod(int n) { this.cod = n;}
 
-        
+       
     }
 }
