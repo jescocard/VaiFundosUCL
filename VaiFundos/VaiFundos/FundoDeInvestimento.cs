@@ -28,21 +28,26 @@ namespace VaiFundos
         {
             GerenciadorCliente gerenciador = new GerenciadorCliente();
             Aplicacao nova = new Aplicacao();
-            nova.cliente = gerenciador.buscaCliente(codCliente); 
-            nova.valorAplicacao = valor;
-            nova.dataAplicacao = DateTime.Now;
-            nova.rendimento = 0;
+            nova.setCliente(gerenciador.buscaCliente(codCliente)); 
+            nova.setValorAplicacao(valor);
+            nova.setDataAplicao(DateTime.Now);
+            nova.setRendimento(0);
             this.aplicacoes.Add(nova);
         }
         public void relatorioCliente(int codigo)
         {
-            foreach (Aplicacao item in aplicacoes)
+            Aplicacao aux;
+            foreach (Aplicacao item in this.aplicacoes)
             {
-                if (item.cliente.getCod().Equals(codigo))
+
+                aux = new Aplicacao();
+                aux = item;
+                if (aux.getCliente().getCod().Equals(codigo))
                 {
-                    Console.WriteLine("O Cliente: {0} , possui o seguinte investimento R$: {1} na data: {2}",item.cliente.getnome(),item.valorAplicacao,item.dataAplicacao);
+                    Console.WriteLine("O Cliente: {0} , possui o seguinte investimento R$: {1} na data: {2}",aux.getCliente().getnome(),aux.getValorAplicacao(),aux.getDataAplicacao());
                 }
             }
+            
         }
     }
 
