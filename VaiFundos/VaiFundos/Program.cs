@@ -10,9 +10,10 @@ namespace VaiFundos
     {
         static void Main(string[] args)
         {
+            
             GerenciadorCliente gerenciador = new GerenciadorCliente();
             gerenciador.cadastrarCliente("jefferson");
-            gerenciador.cadastrarCliente("Junior");
+            gerenciador.cadastrarCliente("AAAAAA");
 
             FundosEmDolar fundo_dolar1 = new FundosEmDolar("Fundos USA", "FSA");
             FundosEmDolar fundo_dolar2 = new FundosEmDolar("Cambio USA", "CSA");
@@ -23,8 +24,10 @@ namespace VaiFundos
             fundo_dolar1.Aplicar(201.0, 2);
 
             fundo_dolar1.relatorioCliente(2);
+            
 
             
+
 
 
 

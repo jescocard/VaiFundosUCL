@@ -19,7 +19,7 @@ namespace VaiFundos
         }
 
 
-        public void resgate()
+        public virtual void resgate(double valor, int codCliente)
         {
 
 
@@ -34,8 +34,8 @@ namespace VaiFundos
             nova.setRendimento(0);
             this.aplicacoes.Add(nova);
         }
-        public void relatorioCliente(int codigo)
-        {
+        public void relatorioCliente(int codigo){
+
             Aplicacao aux;
             foreach (Aplicacao item in this.aplicacoes)
             {
@@ -49,6 +49,19 @@ namespace VaiFundos
             }
             
         }
+        public virtual double calculaRendimento(Aplicacao a)
+            
+        {
+            int anos = 0;
+            TimeSpan dif = DateTime.Now.Subtract(a.getDataAplicacao());
+            anos = dif.Days / 365;
+            if(anos > 1)
+            {
+               a.setRendimento(a.getValorAplicacao() * 0.05);
+            }
+            return a.getRendimento();    
+        }
+
     }
 
 
