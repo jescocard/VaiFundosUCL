@@ -8,7 +8,7 @@ namespace VaiFundos
 {
     class GerenciadorCliente : Cliente
     {
-        protected List<Cliente> Clientes = new List<Cliente>();
+        public List<Cliente> Clientes = new List<Cliente>();
         private List<Aplicacao> todasAplicacoes = new List<Aplicacao>();
 
         public List<Aplicacao> getTodasAplicacoes()
@@ -26,7 +26,7 @@ namespace VaiFundos
             novo.setNome(n);
             novo.setCod(Clientes.Count + 1);
 
-            Clientes.Add(novo);
+            this.Clientes.Add(novo);
         }
         public void listarClientes()
         {
@@ -38,7 +38,7 @@ namespace VaiFundos
         }
         public Cliente buscaCliente(int cod)
         {
-            foreach (Cliente item in Clientes)
+            foreach (Cliente item in this.Clientes)
             {
                 if(item.getCod() == cod)
                 {

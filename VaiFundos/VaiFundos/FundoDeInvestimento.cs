@@ -11,7 +11,7 @@ namespace VaiFundos
         protected string nome;
         protected string sigla;
         public List<Aplicacao> aplicacoes = new List<Aplicacao>();
-        GerenciadorCliente gerenciador = new GerenciadorCliente();
+        
 
         public FundoDeInvestimento(string nome, string sigla)
         {
@@ -27,14 +27,14 @@ namespace VaiFundos
         }
         public void Aplicar(double valor, int codCliente)
         {
-            
+            GerenciadorCliente gerenciador = new GerenciadorCliente();
             Aplicacao nova = new Aplicacao();
             nova.setCliente(gerenciador.buscaCliente(codCliente)); 
             nova.setValorAplicacao(valor);
             nova.setDataAplicao(DateTime.Now);
             nova.setRendimento(0);
             this.aplicacoes.Add(nova);
-            this.gerenciador.setTodasAplicacoes(nova);
+            gerenciador.setTodasAplicacoes(nova);
         }
         public void relatorioCliente(int codigo){
 
