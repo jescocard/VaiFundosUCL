@@ -12,22 +12,23 @@ namespace VaiFundos
         protected string sigla;
         public List<Aplicacao> aplicacoes = new List<Aplicacao>();
 
-        public FundoDeInvestimento(string nome,string sigla)
+        public FundoDeInvestimento(string nome, string sigla)
         {
             this.nome = nome;
             this.sigla = sigla;
         }
-        
+
 
         public void resgate()
         {
 
 
         }
-        public void Aplicar(double valor,Cliente c)
+        public void Aplicar(double valor, int codCliente)
         {
+            GerenciadorCliente gerenciador = new GerenciadorCliente();
             Aplicacao nova = new Aplicacao();
-            nova.cliente = c;
+            nova.cliente = gerenciador.buscaCliente(codCliente); 
             nova.valorAplicacao = valor;
             nova.dataAplicacao = DateTime.Now;
             nova.rendimento = 0;
@@ -37,12 +38,14 @@ namespace VaiFundos
         {
             foreach (Aplicacao item in aplicacoes)
             {
-                if(item.cliente.getCod() == codigo) { 
-}
+                if (item.cliente.getCod().Equals(codigo))
+                {
+                    Console.WriteLine("O Cliente: {0} , possui o seguinte investimento R$: {1} na data: {2}",item.cliente.getnome(),item.valorAplicacao,item.dataAplicacao);
+                }
             }
         }
     }
-    
+
 
 
 }

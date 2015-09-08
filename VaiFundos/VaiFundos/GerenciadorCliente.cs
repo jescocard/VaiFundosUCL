@@ -23,7 +23,22 @@ namespace VaiFundos
             {
                 Console.WriteLine("Nome: {0}, Codigo:{1}", s.getnome(), s.getCod());
             }
+
         }
+        public Cliente buscaCliente(int cod)
+        {
+            foreach (Cliente item in Clientes)
+            {
+                if(item.getCod() == cod)
+                {
+                    return item;
+                }
+               
+            }
+            return null;
+
+        }
+
 
     }
 }

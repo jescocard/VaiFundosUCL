@@ -10,7 +10,7 @@ namespace VaiFundos
     {
         public double valorAplicacao = 0;
         public DateTime dataAplicacao;
-        public Cliente cliente;
+        public Cliente cliente = new Cliente();
         public double rendimento  = 0;
 
         

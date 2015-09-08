@@ -10,11 +10,23 @@ namespace VaiFundos
     {
         static void Main(string[] args)
         {
-            GerenciadorCliente Cadastro = new GerenciadorCliente();
-            Cadastro.cadastrarCliente("jefferson");
-            Cadastro.cadastrarCliente("Junior");
+            GerenciadorCliente gerenciador = new GerenciadorCliente();
+            gerenciador.cadastrarCliente("jefferson");
+            gerenciador.cadastrarCliente("Junior");
 
-            Cadastro.listarClientes();
+            FundosEmDolar fundo_dolar1 = new FundosEmDolar("Fundos USA", "FSA");
+            FundosEmDolar fundo_dolar2 = new FundosEmDolar("Cambio USA", "CSA");
+            FundosEmReal fundo_real1 = new FundosEmReal("Fundo Deposito Interbancario", "DI");
+            FundosEmReal fundo_real2 = new FundosEmReal("Atmos Master", "FIA");
+
+            fundo_dolar1.Aplicar(201.3, 2);
+            fundo_dolar1.Aplicar(201.0, 2);
+
+            fundo_dolar1.relatorioCliente(2);
+
+            
+
+
 
             Console.ReadKey();
 
