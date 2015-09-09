@@ -25,16 +25,16 @@ namespace VaiFundos
 
 
         }
-        public void Aplicar(double valor, int codCliente)
+        public void Aplicar(double valor, int codCliente,GerenciadorCliente a)
         {
-            GerenciadorCliente gerenciador = new GerenciadorCliente();
+            
             Aplicacao nova = new Aplicacao();
-            nova.setCliente(gerenciador.buscaCliente(codCliente)); 
+            nova.setCliente(a.buscaCliente(codCliente)); 
             nova.setValorAplicacao(valor);
             nova.setDataAplicao(DateTime.Now);
             nova.setRendimento(0);
             this.aplicacoes.Add(nova);
-            gerenciador.setTodasAplicacoes(nova);
+            a.setTodasAplicacoes(nova);
         }
         public void relatorioCliente(int codigo){
 
