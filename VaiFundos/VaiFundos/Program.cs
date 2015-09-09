@@ -25,17 +25,7 @@ namespace VaiFundos
              fundo_dolar1.Aplicar(201.3, 2,gerenciador);
              fundo_dolar1.Aplicar(201.0, 2,gerenciador);
 
-             fundo_dolar1.relatorioCliente(2);
-
-           // gerenciador.listarClientes();
-           // a = gerenciador.buscaCliente(2);
-
-           // Console.WriteLine("{0}: :   {1}",a.getnome(), a.getCod());
-
-            
-
-
-
+             fundo_dolar1.relatorioCliente(2);        
 
             Console.ReadKey();
 
