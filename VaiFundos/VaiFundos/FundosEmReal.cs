@@ -72,10 +72,7 @@ namespace VaiFundos
                 {
                     n = 2;
                 }
-                else if (n > 2 && n < 5)
-                {
-                    n = 5;
-                }
+               
 
             }
             valorArredodado = (100 * contNota100) + (50 * contNota50) + (20 * contNota20) + (10 * contNota10) + (5 * contNota5) + (2 * contNota2);
