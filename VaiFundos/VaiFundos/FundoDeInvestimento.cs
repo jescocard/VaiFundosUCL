@@ -20,34 +20,35 @@ namespace VaiFundos
         }
 
 
-        public virtual void resgate(double valor, int codCliente)
+        public virtual void resgate(double valor, int codCliente,GerenciadorCliente g)
         {
 
 
         }
         public void Aplicar(double valor, int codCliente,GerenciadorCliente a)
         {
-            
+            Cliente aux = new Cliente();
+            aux = a.buscaCliente(codCliente);
             Aplicacao nova = new Aplicacao();
             nova.setCliente(a.buscaCliente(codCliente)); 
             nova.setValorAplicacao(valor);
             nova.setDataAplicao(DateTime.Now);
             nova.setRendimento(0);
             this.aplicacoes.Add(nova);
-            a.setTodasAplicacoes(nova);
+            aux.todasAplicacoes.Add(nova);
         }
-        public void relatorioCliente(int codigo){
+        public void relatorioFundo(){
 
             Aplicacao aux;
+            
             foreach (Aplicacao item in this.aplicacoes)
             {
 
                 aux = new Aplicacao();
                 aux = item;
-                if (aux.getCliente().getCod().Equals(codigo))
-                {
+               
                     Console.WriteLine("O Cliente: {0} , possui o seguinte investimento R$: {1} na data: {2}",aux.getCliente().getnome(),aux.getValorAplicacao(),aux.getDataAplicacao());
-                }
+                
             }
             
         }
@@ -62,6 +63,22 @@ namespace VaiFundos
                a.setRendimento(a.getValorAplicacao() * 0.05);
             }
             return a.getRendimento();    
+        }
+        public virtual void TrocarFundo(int codCliente, double valor ,FundoDeInvestimento f)
+
+        {
+            foreach (Aplicacao item in aplicacoes)
+            {
+                if(item.getCliente().getCod() == codCliente && item.getValorAplicacao() == valor)
+                {
+
+                    f.aplicacoes.Add(item);
+                    aplicacoes.Remove(item);
+                    Console.WriteLine("Troca Efetuada Com Sucesso!!!");
+                    return;
+
+                }
+            }
         }
 
     }

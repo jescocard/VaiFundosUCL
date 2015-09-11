@@ -10,8 +10,8 @@ namespace VaiFundos
     {
         private string nome;
         private int cod;
-      
-        
+        public List<Aplicacao> todasAplicacoes = new List<Aplicacao>();
+
 
         public Cliente()
         {

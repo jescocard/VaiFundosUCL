@@ -24,9 +24,22 @@ namespace VaiFundos
 
              fundo_dolar1.Aplicar(201.3, 2,gerenciador);
              fundo_dolar1.Aplicar(201.0, 2,gerenciador);
+            fundo_dolar2.Aplicar(200.0, 2, gerenciador);
+            fundo_real2.Aplicar(200.0, 2, gerenciador);
+            fundo_real2.Aplicar(2, 1, gerenciador);
 
-             fundo_dolar1.relatorioCliente(2);        
-
+            fundo_dolar1.TrocarFundo(2, 201, fundo_real1);
+            fundo_real1.relatorioFundo();
+            Console.WriteLine("");
+            fundo_dolar1.relatorioFundo();
+            //fundo_dolar1.relatorioFundo();
+            //fundo_dolar1.resgate(201, 2, gerenciador);
+            //fundo_real2.resgate(2, 1, gerenciador);
+            //fundo_real2.relatorioFundo();
+            //fundo_dolar1.relatorioFundo();
+            //Console.WriteLine("");
+            //erenciador.relatorioCliente(gerenciador.buscaCliente(1));
+            
             Console.ReadKey();
 
         }

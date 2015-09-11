@@ -14,7 +14,7 @@ namespace VaiFundos
             this.nome = nome;
             this.sigla = sigla;
         }
-        public override void resgate(double valor, int codCliente)
+        public override void resgate(double valor, int codCliente,GerenciadorCliente g)
         {
             foreach (Aplicacao item in aplicacoes)
             {
@@ -29,6 +29,8 @@ namespace VaiFundos
                     Console.WriteLine("O Imposto Sobre a Aplicação foi de R$: {0}", imposto);
                     Console.WriteLine("O Valor Tatal Com Rendimentos Com Descontos Foi De R$: {0}", saqueComrendDesc);
                     this.caculoNotasDolar(saqueComrendDesc);
+                    aplicacoes.Remove(item);
+                    return;
 
                 }
             }
