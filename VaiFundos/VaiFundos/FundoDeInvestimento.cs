@@ -18,6 +18,10 @@ namespace VaiFundos
             this.nome = nome;
             this.sigla = sigla;
         }
+        public string getInfFundo()
+        {
+            return string.Format("Nome: {0}, Sigla: {1}",nome,sigla);
+        }
 
 
         public virtual void resgate(double valor, int codCliente,GerenciadorCliente g)
@@ -35,7 +39,7 @@ namespace VaiFundos
             nova.setDataAplicao(DateTime.Now);
             nova.setRendimento(0);
             this.aplicacoes.Add(nova);
-            aux.todasAplicacoes.Add(nova);
+            aux.setTodasAplicacoes(nova);
         }
         public void relatorioFundo(){
 

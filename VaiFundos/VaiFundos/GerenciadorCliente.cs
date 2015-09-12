@@ -8,17 +8,10 @@ namespace VaiFundos
 {
     class GerenciadorCliente : Cliente
     {
-        public List<Cliente> Clientes = new List<Cliente>();
+        protected List<Cliente> Clientes = new List<Cliente>();
        
 
-        public List<Aplicacao> getTodasAplicacoes()
-        {
-            return this.todasAplicacoes;
-        }
-        public void setTodasAplicacoes(Aplicacao a)
-        {
-            this.todasAplicacoes.Add(a);
-        }
+       
 
         public void cadastrarCliente(string n)
         {
@@ -32,7 +25,7 @@ namespace VaiFundos
         {
             foreach (Cliente s in Clientes)
             {
-                Console.WriteLine("Nome: {0}, Codigo:{1}", s.getnome(), s.getCod());
+                Console.WriteLine("Nome: {0}, Codigo: {1}", s.getnome(), s.getCod());
             }
 
         }
@@ -54,7 +47,7 @@ namespace VaiFundos
         {
 
             Aplicacao aux;
-            foreach (Aplicacao item in c.todasAplicacoes)
+            foreach (Aplicacao item in c.getTodasAplicacoes())
             {
 
                 aux = new Aplicacao();

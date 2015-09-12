@@ -10,7 +10,7 @@ namespace VaiFundos
     {
         private string nome;
         private int cod;
-        public List<Aplicacao> todasAplicacoes = new List<Aplicacao>();
+        protected List<Aplicacao> todasAplicacoes = new List<Aplicacao>();
 
 
         public Cliente()
@@ -22,7 +22,14 @@ namespace VaiFundos
         public void setNome(string n) { this.nome = n; }
         public int getCod() { return this.cod; }
         public void setCod(int n) { this.cod = n;}
+        public List<Aplicacao> getTodasAplicacoes()
+        {
+            return this.todasAplicacoes;
+        }
+        public void setTodasAplicacoes(Aplicacao a)
+        {
+            this.todasAplicacoes.Add(a);
+        }
 
-       
     }
 }
