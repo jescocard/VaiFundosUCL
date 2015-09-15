@@ -44,10 +44,10 @@ namespace VaiFundos
                 {
                     int codFundo = 0;
 
-                    Console.WriteLine("1-{0}", fundo_dolar1.getInfFundo());
-                    Console.WriteLine("2-{0}", fundo_dolar2.getInfFundo());
-                    Console.WriteLine("3-{0}", fundo_real1.getInfFundo());
-                    Console.WriteLine("4-{0}", fundo_real2.getInfFundo());
+                    Console.WriteLine("Cod: 1-{0}", fundo_dolar1.getInfFundo());
+                    Console.WriteLine("Cod: 2-{0}", fundo_dolar2.getInfFundo());
+                    Console.WriteLine("Cod: 3-{0}", fundo_real1.getInfFundo());
+                    Console.WriteLine("Cod: 4-{0}", fundo_real2.getInfFundo());
                     Console.WriteLine("Informe o Codigo Do Fundo que Deseja Aplicar");
                     codFundo = int.Parse(Console.ReadLine());
                     if (codFundo == 1)
@@ -195,8 +195,7 @@ namespace VaiFundos
 
                     Console.WriteLine("Informe o Codigo do fundo que deseja transferir");
                     codFundoOrigem = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
-                    codDestino = int.Parse(Console.ReadLine());
+
                     gerenciador.listarClientes();
                     Console.WriteLine("Informe o codigo do cliente que deseja realizar a transferencia");
                     codCliente = int.Parse(Console.ReadLine());
@@ -204,65 +203,51 @@ namespace VaiFundos
                     valor = double.Parse(Console.ReadLine());
                     if(codFundoOrigem == 1)
                     {
-                        if(codDestino == 2)
+                        Console.WriteLine("Fundos De Investimentos Disponiveis Para Troca");
+                        Console.WriteLine("2-{0}", fundo_dolar2.getInfFundo());
+                        Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
+                        codDestino = int.Parse(Console.ReadLine());
+                        if (codDestino == 2)
                         {
                             fundo_dolar1.TrocarFundo(codCliente,valor,fundo_dolar2);
                         }
-                        else if(codDestino == 3)
-                        {
-
-                            fundo_dolar1.TrocarFundo(codCliente, valor, fundo_real1);
-                        }
-                        else if(codDestino == 4)
-                        {
-                            fundo_real1.TrocarFundo(codCliente, valor, fundo_real2);
-                        }
-
+                     
                     }
                     else if(codFundoOrigem == 2)
                     {
-                        if(codDestino == 1)
+                        Console.WriteLine("Fundos De Investimentos Disponiveis Para Troca");
+                        Console.WriteLine("2-{0}", fundo_dolar1.getInfFundo());
+                        Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
+                        codDestino = int.Parse(Console.ReadLine());
+                        if (codDestino == 1)
                         {
                             fundo_dolar2.TrocarFundo(codCliente, valor, fundo_dolar1);
                         }
-                        else if(codDestino == 3)
-                        {
-                            fundo_dolar2.TrocarFundo(codCliente, valor, fundo_real1);
-                        }
-                        else if(codDestino == 4)
-                        {
-                            fundo_dolar2.TrocarFundo(codCliente, valor, fundo_real2);
-                        }
+                        
                     }
                     else if(codFundoOrigem == 3)
                     {
-                        if(codDestino == 1)
-                        {
-                            fundo_real1.TrocarFundo(codCliente, valor, fundo_dolar1);
-                        }
-                        else if(codDestino == 2)
-                        {
-                            fundo_real1.TrocarFundo(codCliente, valor, fundo_dolar2);
-                        }
-                        else if(codDestino == 4)
+                        Console.WriteLine("Fundos De Investimentos Disponiveis Para Troca");
+                        Console.WriteLine("2-{0}", fundo_real2.getInfFundo());
+                        Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
+                        codDestino = int.Parse(Console.ReadLine());
+                        if (codDestino == 4)
                         {
                             fundo_real1.TrocarFundo(codCliente, valor, fundo_real2);
                         }
+                       
                     }
                     else if(codFundoOrigem == 4)
                     {
-                        if(codDestino == 1)
-                        {
-                            fundo_real2.TrocarFundo(codCliente, valor, fundo_dolar1);
-                        }
-                        else if(codDestino == 2)
-                        {
-                            fundo_real2.TrocarFundo(codCliente, valor, fundo_dolar2);
-                        }
-                        else if(codDestino == 3)
+                        Console.WriteLine("Fundos De Investimentos Disponiveis Para Troca");
+                        Console.WriteLine("2-{0}", fundo_real1.getInfFundo());
+                        Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
+                        codDestino = int.Parse(Console.ReadLine());
+                        if (codDestino == 3)
                         {
                             fundo_real2.TrocarFundo(codCliente, valor, fundo_real1);
                         }
+                       
                     }
                     Console.WriteLine("Troca Efetuada");
                     Console.WriteLine("Toque uma tecla para voltar ao menu principal:");
