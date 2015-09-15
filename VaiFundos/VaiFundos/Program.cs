@@ -209,43 +209,44 @@ namespace VaiFundos
                         codDestino = int.Parse(Console.ReadLine());
                         if (codDestino == 2)
                         {
-                            fundo_dolar1.TrocarFundo(codCliente,valor,fundo_dolar2);
+                            fundo_dolar1.TrocarFundo(codCliente,valor,fundo_dolar2,'D');
                         }
                      
                     }
                     else if(codFundoOrigem == 2)
                     {
                         Console.WriteLine("Fundos De Investimentos Disponiveis Para Troca");
-                        Console.WriteLine("2-{0}", fundo_dolar1.getInfFundo());
+                        Console.WriteLine("1-{0}", fundo_dolar1.getInfFundo());
                         Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
                         codDestino = int.Parse(Console.ReadLine());
                         if (codDestino == 1)
                         {
-                            fundo_dolar2.TrocarFundo(codCliente, valor, fundo_dolar1);
+     
+                            fundo_dolar2.TrocarFundo(codCliente, valor, fundo_dolar1,'D');
                         }
                         
                     }
                     else if(codFundoOrigem == 3)
                     {
                         Console.WriteLine("Fundos De Investimentos Disponiveis Para Troca");
-                        Console.WriteLine("2-{0}", fundo_real2.getInfFundo());
+                        Console.WriteLine("4-{0}", fundo_real2.getInfFundo());
                         Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
                         codDestino = int.Parse(Console.ReadLine());
                         if (codDestino == 4)
                         {
-                            fundo_real1.TrocarFundo(codCliente, valor, fundo_real2);
+                            fundo_real1.TrocarFundo(codCliente, valor, fundo_real2,'R');
                         }
                        
                     }
                     else if(codFundoOrigem == 4)
                     {
                         Console.WriteLine("Fundos De Investimentos Disponiveis Para Troca");
-                        Console.WriteLine("2-{0}", fundo_real1.getInfFundo());
+                        Console.WriteLine("3-{0}", fundo_real1.getInfFundo());
                         Console.WriteLine("Informe o Codigo do fundo que recebera a aplicacao");
                         codDestino = int.Parse(Console.ReadLine());
                         if (codDestino == 3)
                         {
-                            fundo_real2.TrocarFundo(codCliente, valor, fundo_real1);
+                            fundo_real2.TrocarFundo(codCliente, valor, fundo_real1,'R');
                         }
                        
                     }

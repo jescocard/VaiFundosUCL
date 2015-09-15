@@ -68,19 +68,31 @@ namespace VaiFundos
             }
             return a.getRendimento();    
         }
-        public virtual void TrocarFundo(int codCliente, double valor ,FundoDeInvestimento f)
+        public virtual void TrocarFundo(int codCliente, double valor ,FundoDeInvestimento f,char a)
 
         {
             foreach (Aplicacao item in aplicacoes)
             {
-                if(item.getCliente().getCod() == codCliente && item.getValorAplicacao() == valor)
+
+                if (item.getCliente().getCod() == codCliente && item.getValorAplicacao() == valor)
                 {
+                    if (a == 'D')
+                    {
+                        f.aplicacoes.Add(item);
+                        aplicacoes.Remove(item);
+                        Console.WriteLine("Troca Efetuada Com Sucesso!!!");
+                        return;
 
-                    f.aplicacoes.Add(item);
-                    aplicacoes.Remove(item);
-                    Console.WriteLine("Troca Efetuada Com Sucesso!!!");
-                    return;
-
+                    }
+                    else if (a == 'R')
+                            {
+                        item.setValorAplicacao(item.getValorAplicacao() - 10);
+                        f.aplicacoes.Add(item);
+                        aplicacoes.Remove(item);
+                        Console.WriteLine("Troca Efetuada Com Sucesso!!!");
+                        return;
+                    }
+                
                 }
             }
         }
